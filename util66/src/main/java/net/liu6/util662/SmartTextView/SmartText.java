@@ -83,7 +83,9 @@ public class SmartText {
             spannableString.setSpan(new ClickableSpan() {
                 @Override
                 public void onClick(@NonNull View widget) {
-                    onClickListeners[finalI].onClick(widget);
+                    if (onClickListeners[finalI] != null) {
+                        onClickListeners[finalI].onClick(widget);
+                    }
                 }
 
                 @Override
